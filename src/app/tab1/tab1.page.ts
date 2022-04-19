@@ -6,7 +6,6 @@ import {WeatherService} from '../services/weather.service';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-
 export class Tab1Page implements OnInit {
 
   public weather = {};
@@ -26,3 +25,4 @@ export class Tab1Page implements OnInit {
       });
     }
 }
+

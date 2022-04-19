@@ -1,11 +1,34 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="ion-text-center">
-      Forecast
-    </ion-title>
+    <ion-title class="ion-text-center">Forecast</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
+  <ion-list>
+    <ion-item>
+      <ion-grid>
+        <div *ngFor="let f of forecast">
+          <ion-row>
+            <ion-col class="ion-text-start" size="2">
+              <img
+                src="http://openweathermap.org/img/wn/{{f.weather[0].icon}}@2x.png"
+                height="40px"
+              />
+            </ion-col>
+            <ion-col class="ion-text-start">
+              {{f.weather[0].description}}
+              <br />
+              {{f.dt_txt}}
+            </ion-col>
+            <ion-col class="ion-text-end">
+              {{f.main.temp}} °C <br />
+              {{f.main.temp_min}} - {{f.main.temp_max}} °C
+            </ion-col>
+          </ion-row>
+          <hr>
+        </div>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
 </ion-content>
